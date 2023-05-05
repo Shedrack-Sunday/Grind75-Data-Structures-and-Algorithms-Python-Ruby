@@ -1,0 +1,62 @@
+# Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+# An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+ 
+
+# Example 1:
+
+# Input: s = "anagram", t = "nagaram"
+# Output: true
+# Example 2:
+
+# Input: s = "rat", t = "car"
+# Output: false
+
+# ## Python:
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
+
+        return Counter(s) == Counte(t)
+
+        if len(s) != len(t):
+            return False
+        countS, countT = {}, {}
+
+        for i in range(len(s)):
+            countS[s[i]] = 1 + countS.get(s[i], 0)
+            countT[t[i]] = 1 + countT.get(t[i], 0)
+        for c in countS:
+            if countS[c] != countT.get(c, 0):
+                return False
+        return True 
+
+## Ruby:
+class Solution
+  def is_anagram(s, t)
+    # Approach 1: Sorting
+    s.chars.sort == t.chars.sort
+
+    # Approach 2: Counter
+    s.chars.tally == t.chars.tally
+
+    # Approach 3: Dictionary
+    return false if s.length != t.length
+
+    count_s = Hash.new(0)
+    count_t = Hash.new(0)
+
+    s.chars.each { |c| count_s[c] += 1 }
+    t.chars.each { |c| count_t[c] += 1 }
+
+    count_s.each do |k, v|
+      return false if v != count_t[k]
+    end
+
+    true
+  end
+end
+
+        
